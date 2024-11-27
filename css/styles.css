@@ -1,9 +1,9 @@
-/* General styling for layout */
+/* General Styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background: linear-gradient(to bottom, #f4f4f4, #e8e8e8);
 }
 
 h1, h2, h3, h4 {
@@ -11,10 +11,44 @@ h1, h2, h3, h4 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1rem;
 }
 
-/* Header Section Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation Bar */
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #4CAF50;
+}
+
+/* Header Section */
 .about-header {
   background-color: #4CAF50;
   color: white;
@@ -37,14 +71,15 @@ p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
   background-color: #1565C0;
+  outline: 2px solid #1565C0;
+  outline-offset: 2px;
 }
 
-/* Features Section Styling */
+/* Features Section */
 .about-features {
   padding: 50px;
   text-align: center;
@@ -53,9 +88,9 @@ p {
 .about-features .feature {
   margin: 20px;
   padding: 20px;
-  background-color: #ffffff;
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -66,24 +101,24 @@ p {
   transform: translateY(0);
 }
 
-/* Team Section Styling */
+/* Team Section */
 .team-section {
-  background-color: #ffffff;
+  background: white;
   padding: 50px;
   text-align: center;
-}
-
-.team-member {
-  display: inline-block;
-  margin: 20px;
-  width: 250px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .team-member img {
   width: 100%;
   border-radius: 50%;
-  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.05);
 }
 
 .team-member h4 {
@@ -91,6 +126,10 @@ p {
   font-size: 1.5em;
 }
 
-.team-member p {
-  font-size: 1.1em;
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
