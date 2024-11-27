@@ -22,11 +22,10 @@ p, ul {
 
 /* Header Section */
 .header-section {
-  background: url('images/tree_background.jpg') center/cover no-repeat; /* Add background image */
+  background: url('images/tree_background.jpg') center/cover no-repeat; /* Ensure the file path is correct */
   color: #fff; /* White text for contrast */
   padding: 100px 20px; /* Adjust padding for spacing */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better text visibility */
-  border-bottom: 5px solid #8BC34A; /* Optional: Green border at the bottom */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add shadow for better text visibility */
 }
 
 /* Feature Cards */
