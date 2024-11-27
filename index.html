@@ -1,86 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>SchutzBaumchen</title>
-  
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- SEO and Metadata -->
-  <meta name="description" content="SchutzBaumchen - Enhancing urban ecosystems through citizen science and remote sensing.">
-  <meta name="author" content="Daniel Knopp, Juan Miguel Viquez, Silvia Krauztik">
-  <meta name="keywords" content="urban trees, ecosystem services, remote sensing, citizen science">
-
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchutzBaumchen</title>
+    <!-- Linking the CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="#features_section">Mission/Vision</a></li>
-      <li><a href="#team-section">Meet the Team</a></li>
-    </ul>
-  </nav>
 
-  <!-- Header Section -->
-  <header class="about-header">
+<header>
     <h1>Welcome to SchutzBaumchen</h1>
     <p>Prototype App for TH Kick Start</p>
-    <button class="btn-primary" data-target="features_section">Get Started</button>
-  </header>
+    <a href="#features_section" class="btn-primary" id="get_started">Get Started</a>
+</header>
 
-  <!-- What We Do Section -->
-  <section id="features_section" class="about-features">
+<div id="features_section" class="about-features">
     <h2>Mission/Vision</h2>
     <p>Enable the Pandora box of citizen science with climate data.</p>
-    
-    <div class="feature">
-      <h3>What is BaumSchutz?</h3>
-      <p>BaumSchutz is an innovative tool designed to enhance and protect the ecosystem services provided by urban trees...</p>
-    </div>
-    <div class="feature">
-      <h3>How?</h3>
-      <p>By combining local data sources, high-resolution remote sensing products, and citizen science...</p>
-    </div>
-    <div class="feature">
-      <h3>Who is it for?</h3>
-      <ul>
-        <li><strong>Kids:</strong> Learn about environmental stewardship through gamification.</li>
-        <li><strong>Urban Tree Managers:</strong> Comprehensive reports on the health of urban forests.</li>
-      </ul>
-    </div>
-  </section>
 
-  <!-- Meet the Team Section -->
-  <section id="team-section" class="team-section">
+    <!-- Features Grid -->
+    <div class="features">
+        <div class="feature">
+            <h3>What is BaumSchutz?</h3>
+            <p>BaumSchutz is an innovative tool designed to enhance and protect the ecosystem services provided by urban trees. It empowers communities and professionals to monitor and improve the health and sustainability of urban forests.</p>
+            <button class="btn-primary">Learn More ></button>
+        </div>
+        <div class="feature">
+            <h3>How?</h3>
+            <p>By combining local data sources, high-resolution remote sensing products, and citizen science to deliver actionable insights and promote active participation in urban tree management.</p>
+        </div>
+        <div class="feature">
+            <h3>Who is it for?</h3>
+            <ul>
+                <li><b>Kids:</b> Learn about environmental stewardship while engaging in fun, educational activities.</li>
+                <li><b>Urban Tree Managers and Rangers:</b> BaumSchutz provides comprehensive reports on the health status of parks and individual trees, enabling data-driven decision-making.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Meet the Team Section -->
+<div class="team-section">
     <h2>Meet the Team</h2>
-    <div class="team-member">
-      <img src="images/Daniel.jpeg" alt="Daniel Knopp">
-      <h4>Daniel Knopp</h4>
-      <p>Irrigation and remote sensing</p>
+    <div class="team-members">
+        <div class="team-member">
+            <img src="images/daniel.jpeg" alt="Daniel Knopp">
+            <h4>Daniel Knopp</h4>
+            <p>Irrigation and remote sensing</p>
+        </div>
+        <div class="team-member">
+            <img src="images/juan.jpeg" alt="Juan Miguel Viquez">
+            <h4>Juan Miguel Viquez</h4>
+            <p>Eng. Biosystems and Climate Modeller</p>
+        </div>
+        <div class="team-member">
+            <img src="images/silvia.jpeg" alt="Silvia Krauztik">
+            <h4>Silvia Krauztik</h4>
+            <p>Geo-data and Full Stack Web Developer</p>
+        </div>
     </div>
-    <div class="team-member">
-      <img src="images/juan.jpeg" alt="Juan Miguel Viquez">
-      <h4>Juan Miguel Viquez</h4>
-      <p>Eng. Biosystems and Climate Modeller</p>
-    </div>
-    <div class="team-member">
-      <img src="images/silvia.jpeg" alt="Silvia Krauztik">
-      <h4>Silvia Krauztik</h4>
-      <p>Geo-data and Full stack web developer</p>
-    </div>
-  </section>
+</div>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; SchutzBaumchen. All Rights Reserved. | <span id="currentYear"></span></p>
-    <p><a href="mailto:contact@schutzbaumchen.com">Contact Us</a></p>
-  </footer>
+<script src="js/scripts.js"></script>
 
-  <!-- Link to external JS -->
-  <script src="js/script.js"></script>
 </body>
 </html>
