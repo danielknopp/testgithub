@@ -1,0 +1,96 @@
+/* General styling for layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4 {
+  color: #333;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+/* Header Section Styling */
+.about-header {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.about-header h1 {
+  font-size: 2.5em;
+}
+
+.about-header p {
+  font-size: 1.2em;
+}
+
+.btn-primary {
+  background-color: #1E88E5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #1565C0;
+}
+
+/* Features Section Styling */
+.about-features {
+  padding: 50px;
+  text-align: center;
+}
+
+.about-features .feature {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Team Section Styling */
+.team-section {
+  background-color: #ffffff;
+  padding: 50px;
+  text-align: center;
+}
+
+.team-member {
+  display: inline-block;
+  margin: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  height: auto;
+}
+
+.team-member h4 {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.team-member p {
+  font-size: 1.1em;
+}
