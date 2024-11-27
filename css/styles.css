@@ -3,6 +3,8 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #121212;
   color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4 {
@@ -15,9 +17,22 @@ p, ul {
 }
 
 /* Navbar */
+.navbar {
+  background-color: #1e1e1e;
+}
+
 .navbar-brand {
   font-weight: 600;
   font-size: 1.5rem;
+  color: #8BC34A !important;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #8BC34A;
 }
 
 /* Header Section */
@@ -26,26 +41,48 @@ p, ul {
   color: #fff; /* White text for contrast */
   padding: 100px 20px; /* Adjust padding for spacing */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add shadow for better text visibility */
+  border-bottom: 3px solid #8BC34A;
 }
 
 /* Feature Cards */
 .feature-card {
   background: #1e1e1e;
   color: #fff;
+  border: 1px solid #8BC34A;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card h3 {
   font-size: 1.5rem;
+  color: #8BC34A;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 .feature-card .btn {
   margin-top: 10px;
+  background-color: #8BC34A;
+  color: #121212;
+  border: none;
+}
+
+.feature-card .btn:hover {
+  background-color: #76a935;
 }
 
 /* Team Member Styling */
 .team-member img {
+  border: 3px solid #8BC34A;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -53,9 +90,25 @@ p, ul {
   transform: scale(1.1);
 }
 
+.team-member h4 {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  color: #8BC34A;
+}
+
+.team-member p {
+  font-size: 1rem;
+}
+
 /* Footer */
 footer {
   background: #1e1e1e;
   color: #8BC34A;
   padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
