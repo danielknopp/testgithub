@@ -22,11 +22,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#features_section">About Us</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#" data-section="features_section">Features</a></li>
                 <li class="nav-item"><a class="nav-link" href="#features_section">Main Page</a></li>
                 <li class="nav-item"><a class="nav-link" href="#health">Park Health NDVI</a></li>
                 <li class="nav-item"><a class="nav-link" href="#climate">Climatic Parameters</a></li>
-                <li class="nav-item"><a class="nav-link" href="#google">Google Sheet Data</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-section="app_services">App Services</a></li>
             </ul>
         </div>
     </div>
@@ -43,26 +43,25 @@
 
 <!-- Features Section -->
 <div id="features_section" class="container mt-5">
-    <h2 class="text-center">Mission/Vision</h2>
+    <h2 class="text-center text-success">Mission/Vision</h2>
     <p class="text-center">Enable the Pandora box of citizen science with climate data.</p>
 
     <div class="row g-4 mt-4">
         <div class="col-md-4">
-            <div class="feature-card p-4 rounded">
-                <h3>What is BaumSchutz?</h3>
+            <div class="feature-card p-4 bg-dark border border-success rounded">
+                <h3 class="text-success">What is BaumSchutz?</h3>
                 <p>BaumSchutz is an innovative tool designed to enhance and protect the ecosystem services provided by urban trees. It empowers communities and professionals to monitor and improve the health and sustainability of urban forests.</p>
-                <button class="btn btn-outline-success">Learn More ></button>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="feature-card p-4 rounded">
-                <h3>How?</h3>
+            <div class="feature-card p-4 bg-dark border border-success rounded">
+                <h3 class="text-success">How?</h3>
                 <p>By combining local data sources, high-resolution remote sensing products, and citizen science to deliver actionable insights and promote active participation in urban tree management.</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="feature-card p-4 rounded">
-                <h3>Who is it for?</h3>
+            <div class="feature-card p-4 bg-dark border border-success rounded">
+                <h3 class="text-success">Who is it for?</h3>
                 <ul>
                     <li><b>Kids:</b> Learn about environmental stewardship while engaging in fun, educational activities.</li>
                     <li><b>Urban Tree Managers:</b> BaumSchutz provides comprehensive reports on the health of parks and trees.</li>
@@ -70,35 +69,82 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- Team Section -->
-<div class="container mt-5">
-    <h2 class="text-center">Meet the Team</h2>
-    <div class="row text-center g-4 mt-4">
-        <div class="col-md-4">
-            <div class="team-member">
-                <img src="images/Daniel.jpeg" alt="Daniel Knopp" class="img-fluid rounded-circle mb-3" style="width: 150px;">
-                <h4>Daniel Knopp</h4>
-                <p>Irrigation and Remote Sensing</p>
+    <!-- Team Section (Now Part of Features Section) -->
+    <div class="container mt-5">
+        <h2 class="text-center text-success">Meet the Team</h2>
+        <div class="row text-center g-4 mt-4">
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="images/Daniel.jpeg" alt="Daniel Knopp" class="img-fluid rounded-circle mb-3" style="width: 150px;">
+                    <h4 class="text-success">Daniel Knopp</h4>
+                    <p>Irrigation and Remote Sensing</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="team-member">
-                <img src="images/juan.jpeg" alt="Juan Miguel Viquez" class="img-fluid rounded-circle mb-3" style="width: 150px;">
-                <h4>Juan Miguel Viquez</h4>
-                <p>Eng. Biosystems and Climate Modeller</p>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="images/juan.jpeg" alt="Juan Miguel Viquez" class="img-fluid rounded-circle mb-3" style="width: 150px;">
+                    <h4 class="text-success">Juan Miguel Viquez</h4>
+                    <p>Eng. Biosystems and Climate Modeller</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="team-member">
-                <img src="images/silvia.jpeg" alt="Silvia Krauztik" class="img-fluid rounded-circle mb-3" style="width: 150px;">
-                <h4>Silvia Krauztik</h4>
-                <p>Geo-data and Full Stack Web Developer</p>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="images/silvia.jpeg" alt="Silvia Krauztik" class="img-fluid rounded-circle mb-3" style="width: 150px;">
+                    <h4 class="text-success">Silvia Krauztik</h4>
+                    <p>Geo-data and Full Stack Web Developer</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- App Services Section -->
+<div id="app_services" class="container mt-5" style="display: none;">
+    <h2 class="text-center text-success">App Services</h2>
+    <p class="text-center">Explore the apps designed for environmental solutions and data-driven decision-making.</p>
+
+    <div class="row g-4 mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card text-center bg-dark border border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-success">IrriGap Shiny App</h5>
+                    <p class="card-text">Explore irrigation scheduling and data visualization for precision agriculture.</p>
+                    <a href="https://danielantonioknopp.shinyapps.io/IrriGap/" class="btn btn-success" target="_blank">Go to App</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- JavaScript to Toggle Sections -->
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Hide all sections
+            document.querySelectorAll('div[id]').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the clicked section
+            const sectionId = this.getAttribute('data-section');
+            if (sectionId) {
+                document.getElementById(sectionId).style.display = 'block';
+            }
+
+            // Update active class
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Show default section (Features and Team)
+    document.getElementById('features_section').style.display = 'block';
+</script>
 
 <!-- Footer -->
 <footer class="text-center py-4">

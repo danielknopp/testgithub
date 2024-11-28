@@ -27,8 +27,14 @@ p, ul {
   color: #8BC34A !important;
 }
 
-.navbar-nav .nav-link {
-  color: #fff;
+/* Navbar Active Tab */
+.nav-link {
+  color: #fff; /* Default color for non-active links */
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #8BC34A !important; /* Green accent for the active link */
 }
 
 .navbar-nav .nav-link:hover {
@@ -111,4 +117,34 @@ footer {
 footer p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+
+/* App Services Section */
+.card {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #8BC34A;
+}
+
+.card .btn {
+  background-color: #8BC34A;
+  color: #121212;
+}
+
+.card .btn:hover {
+  background-color: #76a935;
+  color: white;
 }
