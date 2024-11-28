@@ -12,146 +12,69 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-dark text-light">
+    <div id="navbar"></div> <!-- Navbar -->
+    <div id="header"></div> <!-- Header -->
+    <div id="content"></div> <!-- Dynamic Content -->
+    <div id="footer"></div> <!-- Footer -->
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">SchutzBäumchen</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="#" data-section="features_section">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#features_section">Main Page</a></li>
-                <li class="nav-item"><a class="nav-link" href="#health">Park Health NDVI</a></li>
-                <li class="nav-item"><a class="nav-link" href="#climate">Climatic Parameters</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-section="app_services">App Services</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadHTML = async (id, path) => {
+                try {
+                    const response = await fetch(path);
+                    if (response.ok) {
+                        const content = await response.text();
+                        document.getElementById(id).innerHTML = content;
 
-<!-- Header Section -->
-<header class="header-section text-center" style="background: url('images/tree_background.jpg') center/cover no-repeat; padding: 100px 20px; color: white; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-    <div class="container">
-        <h1>Welcome to SchutzBäumchen</h1>
-        <p class="lead">Prototype App for TH Kick Start</p>
-        <a href="#features_section" class="btn btn-success btn-lg">Get Started</a>
-    </div>
-</header>
+                        // Attach navigation logic after navbar loads
+                        if (id === 'navbar') setupNavigation();
+                    } else {
+                        console.error(`Error loading ${path}: ${response.statusText}`);
+                    }
+                } catch (error) {
+                    console.error(`Error fetching ${path}:`, error);
+                }
+            };
 
-<!-- Features Section -->
-<div id="features_section" class="container mt-5">
-    <h2 class="text-center text-success">Mission/Vision</h2>
-    <p class="text-center">Enable the Pandora box of citizen science with climate data.</p>
+            // Load partials
+            loadHTML('navbar', 'partials/navbar.html');
+            loadHTML('header', 'partials/header.html');
+            loadHTML('footer', 'partials/footer.html');
 
-    <div class="row g-4 mt-4">
-        <div class="col-md-4">
-            <div class="feature-card p-4 bg-dark border border-success rounded">
-                <h3 class="text-success">What is BaumSchutz?</h3>
-                <p>BaumSchutz is an innovative tool designed to enhance and protect the ecosystem services provided by urban trees. It empowers communities and professionals to monitor and improve the health and sustainability of urban forests.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card p-4 bg-dark border border-success rounded">
-                <h3 class="text-success">How?</h3>
-                <p>By combining local data sources, high-resolution remote sensing products, and citizen science to deliver actionable insights and promote active participation in urban tree management.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card p-4 bg-dark border border-success rounded">
-                <h3 class="text-success">Who is it for?</h3>
-                <ul>
-                    <li><b>Kids:</b> Learn about environmental stewardship while engaging in fun, educational activities.</li>
-                    <li><b>Urban Tree Managers:</b> BaumSchutz provides comprehensive reports on the health of parks and trees.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+            // Child components to load dynamically
+            const childComponents = {
+                features: 'partials/features.html',
+                app_services: 'partials/app_services.html',
+            };
 
-    <!-- Team Section (Now Part of Features Section) -->
-    <div class="container mt-5">
-        <h2 class="text-center text-success">Meet the Team</h2>
-        <div class="row text-center g-4 mt-4">
-            <div class="col-md-4">
-                <div class="team-member">
-                    <img src="images/Daniel.jpeg" alt="Daniel Knopp" class="img-fluid rounded-circle mb-3" style="width: 150px;">
-                    <h4 class="text-success">Daniel Knopp</h4>
-                    <p>Irrigation and Remote Sensing</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team-member">
-                    <img src="images/juan.jpeg" alt="Juan Miguel Viquez" class="img-fluid rounded-circle mb-3" style="width: 150px;">
-                    <h4 class="text-success">Juan Miguel Viquez</h4>
-                    <p>Eng. Biosystems and Climate Modeller</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team-member">
-                    <img src="images/silvia.jpeg" alt="Silvia Krauztik" class="img-fluid rounded-circle mb-3" style="width: 150px;">
-                    <h4 class="text-success">Silvia Krauztik</h4>
-                    <p>Geo-data and Full Stack Web Developer</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+            // Load default content
+            const loadDefaultContent = () => {
+                loadHTML('content', childComponents.features);
+            };
 
-<!-- App Services Section -->
-<div id="app_services" class="container mt-5" style="display: none;">
-    <h2 class="text-center text-success">App Services</h2>
-    <p class="text-center">Explore the apps designed for environmental solutions and data-driven decision-making.</p>
+            // Setup navigation
+            const setupNavigation = () => {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
 
-    <div class="row g-4 mt-4">
-        <div class="col-md-6 offset-md-3">
-            <div class="card text-center bg-dark border border-success">
-                <div class="card-body">
-                    <h5 class="card-title text-success">IrriGap Shiny App</h5>
-                    <p class="card-text">Explore irrigation scheduling and data visualization for precision agriculture.</p>
-                    <a href="https://danielantonioknopp.shinyapps.io/IrriGap/" class="btn btn-success" target="_blank">Go to App</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                        const section = link.getAttribute('data-section');
+                        if (section && childComponents[section]) {
+                            loadHTML('content', childComponents[section]);
 
+                            // Update active link
+                            document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+                            link.classList.add('active');
+                        }
+                    });
+                });
 
-
-<!-- JavaScript to Toggle Sections -->
-<script>
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Hide all sections
-            document.querySelectorAll('div[id]').forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Show the clicked section
-            const sectionId = this.getAttribute('data-section');
-            if (sectionId) {
-                document.getElementById(sectionId).style.display = 'block';
-            }
-
-            // Update active class
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-            this.classList.add('active');
+                // Load default content
+                loadDefaultContent();
+            };
         });
-    });
-
-    // Show default section (Features and Team)
-    document.getElementById('features_section').style.display = 'block';
-</script>
-
-<!-- Footer -->
-<footer class="text-center py-4">
-    <p>&copy; 2024 SchutzBäumchen. All Rights Reserved.</p>
-</footer>
-
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
